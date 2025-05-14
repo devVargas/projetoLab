@@ -1,4 +1,4 @@
-package exercicio.arquivos;
+package exercicio.arquivosLeitura;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

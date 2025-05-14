@@ -1,4 +1,4 @@
-package exercicio.arquivos;
+package exercicio.arquivosLeitura;
 
 public class Vestuario extends Produto {
     private int quantEstoque;

@@ -1,4 +1,4 @@
-package exercicio.arquivos;
+package exercicio.arquivosLeitura;
 
 public abstract class Produto {
     private String nome;

@@ -1,4 +1,4 @@
-package exercicio.arquivos;
+package exercicio.arquivosLeitura;
 
 public class Eletrodomestico extends Produto {
     private double ipi;

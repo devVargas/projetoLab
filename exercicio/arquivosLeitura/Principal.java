@@ -1,4 +1,4 @@
-package exercicio.arquivos;
+package exercicio.arquivosLeitura;
 
 import java.io.FileWriter;
 import java.util.Scanner;
