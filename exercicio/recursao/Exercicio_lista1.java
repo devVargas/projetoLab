@@ -37,12 +37,38 @@ public class Exercicio_lista1 {
 
     }
 
-    public static void main(String[] args) {
-        // int[] array = {1, 2, 3, 4, 5};
-        // imprimiReverso(array);
-        // imprimiNormal(array);
+    public static int encontraPosicaoMenorValor(int[] array) throws IllegalArgumentException {
+        if(array == null) throw new IllegalArgumentException();
+        return encontraPosicaoMenorValor(array, 0, 0);
+    }
 
-        double[][] array = {{1.5, 2, 3}, {4, 5.9, 6}, {7, 8.6, 9}};
-        System.out.println(soma(array));
+    private static int encontraPosicaoMenorValor(int[] array, int index, int posicaoMenor){
+        if(index >= array.length) return posicaoMenor;
+        if(array[index] < array[posicaoMenor]) return posicaoMenor = index;
+        return encontraPosicaoMenorValor(array, index + 1, posicaoMenor);
+    }
+
+    public static void printPrimaryDiagonal(double[][] array) throws IllegalArgumentException, MatrixNotPossibleException {
+        if (array == null) throw new IllegalArgumentException();
+        if (array.length != array[0].length) throw new MatrixNotPossibleException("Matriz não é quadrada");
+        printPrimaryDiagonal(array, 0);
+    }
+
+    private static void printPrimaryDiagonal(double [][] array, int index) {
+        if(index >= array.length) return;
+        System.out.println(array[index][index]);
+        printPrimaryDiagonal(array, index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        imprimiReverso(array);
+        imprimiNormal(array);
+        System.out.println(encontraPosicaoMenorValor(array));
+
+
+        double[][] array2 = {{1.5, 2, 3}, {4, 5.9, 6}, {7, 8.6, 9}};
+        System.out.println(soma(array2));
+        printPrimaryDiagonal(array2);
     }
 }
