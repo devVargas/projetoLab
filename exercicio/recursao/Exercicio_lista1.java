@@ -1,6 +1,7 @@
 package exercicio.recursao;
 
 public class Exercicio_lista1 {
+        
     public static void imprimiReverso(int[] array) throws IllegalArgumentException {
         if(array == null) throw new IllegalArgumentException();
         imprimiReverso(array, array.length - 1);
@@ -60,6 +61,18 @@ public class Exercicio_lista1 {
         printPrimaryDiagonal(array, index + 1);
     }
 
+    public static int binaryToDecimal(String s) throws IllegalArgumentException {
+        if(s == null || s.length() != 8) throw new IllegalArgumentException();
+        return binaryToDecimal(s, 0);
+    }
+
+    private static int binaryToDecimal(String s, int i){
+		if(i >= s.length()) return 0;
+		char digito = s.charAt(s.length()-1-i);
+		if(digito == '1') return (int)Math.pow(2, i) + binaryToDecimal(s, i+1);
+		return binaryToDecimal(s, i+1);
+	}
+
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
         imprimiReverso(array);
@@ -70,5 +83,6 @@ public class Exercicio_lista1 {
         double[][] array2 = {{1.5, 2, 3}, {4, 5.9, 6}, {7, 8.6, 9}};
         System.out.println(soma(array2));
         printPrimaryDiagonal(array2);
+        System.out.println(binaryToDecimal("10010101"));
     }
 }
